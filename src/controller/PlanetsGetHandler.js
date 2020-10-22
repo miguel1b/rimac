@@ -17,8 +17,7 @@ module.exports.planets = async (event, context) => {
         for(let i in result)
         {
             result[i].peliculas = await db.obtener_peliculas(result[i].id);
-            //result[i].residentes = await db.obtener_residentes(result[i].id);
-            //result[i] = await utils.completar_planeta(result[i], db);
+            result[i].residentes = await db.obtener_residentes(result[i].id);
         }
         console.log("antes del request ");
         let response = await services.httpRequest(options, null);

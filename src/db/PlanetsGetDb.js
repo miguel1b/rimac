@@ -15,7 +15,7 @@ var pool = mysql.createPool({
 async function obtener_planetas(){
     try {
         //let query = "SELECT idPlanetas as id, nombre, periodo_rotacion , periodo_orbital, diametro, clima, gravedad, terreno, aguas_superficiales, poblacion, fecha_creacion, fecha_modificacion, url FROM PLANETA;";
-        let query = "select idPlanetas as id, nombre, periodo_rotacion , periodo_orbital, diametro, clima, terreno, aguas_superficiales, poblacion, fecha_creacion, fecha_modificacion, url from PLANETA;";
+        let query = "select idPlanetas as id,nombre,periodo_rotacion,periodo_orbital,diametro,clima,gravedad,terreno, aguas_superficiales, poblacion, fecha_creacion, fecha_modificacion, url from PLANETA;";
         // let query = "CALL SP_OBTENER_PLANETAS();";
         const [rows, fields] = await pool.query(query);
         return rows;
